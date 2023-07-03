@@ -13,13 +13,24 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina.*/
 
 
 function submitForm(event) {
-    
+
     event.preventDefault();
-    console.log("test form")
 
 
     let userInfo = document.getElementById("inputInfo").value;
-    let userKilometers = document.getElementById("inputKilometers").value;
-    let userTicket = document.getElementById("inputTicket").value;
+    let userKilometers = Math.floor(document.getElementById("inputKilometers").value);
+    let userAge = Math.floor(document.getElementById("userAge").value);
+    let price = userKilometers * 0.21;
 
+    if (userAge >= 65) {
+        price = price * 60 / 100;
+    } else if (userAge < 18) {
+        price = price * 80 / 100;
+    }
+
+    document.getElementById("divForm").classList.add("d-none");
+    document.getElementById("divTicket").classList.remove("d-none");
+
+    document.getElementById("userInfo").innerHTML = userInfo;
+    document.getElementById("finalPrice").innerHTML = price;
 }

@@ -14,36 +14,42 @@
 
 </head>
 
-<body>
-    <h1 class="text-center">ACQUISTA BIGLIETTO</h1>
+<body class="bg-dark text-primary">
+    <form class="container-fluid row text-center m-auto w-75 my-5 border border-primary" onsubmit="submitForm(event)"
+        id="divForm">
+        <h1 class="text-center mb-3">DATI BIGLIETTO</h1>
 
-    <form class="container-fluid text-center m-auto w-75" onsubmit="submitForm(event)" id="userForm">
-        <div class="col">
-            <label for="inputInfo" class="form-label">Nome e cognome passeggero</label>
+        <div class="col-sm-12 col-md-4">
+            <label for="inputInfo" class="form-label">Dati passeggero:</label>
             <input type="text" class="form-control" id="inputInfo" placeholder="Inserisci i tuoi dati...">
         </div>
 
-        <div class="col">
-            <label for="inputKilometers" class="form-label">KM da percorrere</label>
+        <div class="col-sm-12 col-md-4">
+            <label for="inputKilometers" class="form-label">KM da percorrere:</label>
             <input type="text" class="form-control" id="inputKilometers" placeholder="Inserisci i km da percorrere...">
         </div>
 
-        <div class="col">
-            <label for="inputTicket" class="form-label">Tipo biglietto</label>
-            <select id="inputTicket" class="form-select d-flex d-inline-block">
-                <option selected="Seleziona biglietto">Seleziona biglietto</option>
-                <option value="1">Standard</option>
-                <option value="2">Under 18</option>
-                <option value="3">Over 65</option>
-            </select>
+        <div class="col-sm-12 col-md-4">
+            <label for="userAge" class="form-label">Età</label>
+            <input type="text" class="form-control" id="userAge" placeholder="Inserisci la tua età">
         </div>
 
-        <div class="col">
+        <div class="col-12 my-3">
             <button type="submit" class="btn btn-primary">Genera biglietto</button>
         </div>
     </form>
 
-    <div class="container-fluid">
+    <div class="container-fluid d-none text-center m-auto w-50 my-5 border border-primary" id="divTicket">
+        <h1>IL TUO BIGLIETTO:</h1>
+        <div class="container row">
+            <p class="col-6">Dati passeggero:</p>
+            <p id="userInfo" class="col-6"></p>
+
+            <p class="col-6">Prezzo biglietto:</p>
+            <p id="finalPrice" class="col-6"></p>
+
+
+        </div>
 
     </div>
 
