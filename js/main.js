@@ -32,5 +32,9 @@ function submitForm(event) {
     document.getElementById("divTicket").classList.remove("d-none");
 
     document.getElementById("userInfo").innerHTML = userInfo;
-    document.getElementById("finalPrice").innerHTML = price;
+    document.getElementById("finalPrice").innerHTML = `${price}€`;
+}
+
+function refreshWindow() {
+    location.reload();
 }
